@@ -102,3 +102,6 @@ tr:hover td {
 
 }
 
+#freqDisplay, #nextDisplay {
+    text-align: center !important;
+}
