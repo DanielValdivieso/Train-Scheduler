@@ -40,7 +40,6 @@ $("#submit").on("click", function() {
 //ON CLICK CHILD FUNCTION
 database.ref().on("child_added", function(childSnapshot){
 	// console.log(childSnapshot.val());
-	//time = childSnapshot.val().time;
 	var name = childSnapshot.val().name;
 	var dest = childSnapshot.val().dest;
 	var time = childSnapshot.val().time;
@@ -66,7 +65,6 @@ database.ref().on("child_added", function(childSnapshot){
 	
 	//DIFFERENCE B/T THE TIMES 
 	var tConverted = moment(trainTime, 'HH:mm').subtract(1, 'years');
-
 	var tDifference = moment().diff(moment(tConverted), 'minutes');
 	console.log("DIFFERENCE IN TIME: " + tDifference);
 	//REMAINDER 
@@ -87,20 +85,9 @@ $('#trainTable').append(
 		"<tr><td id='nameDisplay'>" + childSnapshot.val().name +
 		"</td><td id='destDisplay'>" + childSnapshot.val().dest +
 		"</td><td id='freqDisplay'>" + childSnapshot.val().freq +
-		"</td><td id='nextDisplay'>" + nextTrain +
-		"</td><td id='awayDisplay'>" + minsAway + "</td></tr>");
+		"</td><td id='nextDisplay'>" + moment(nextTrain).format("HH:mm") +
+		"</td><td id='awayDisplay'>" + minsAway  + ' minutes until arrival' + "</td></tr>");
  },
-		
-
-
-	// 	"</td>" + childSnapshot.val().dest + "</td>" +
-	// 	"<td>" + childSnapshot.val().freq + "</td>" +
-	// 	//"<td>" + childSnapshot.val().time + "</td>" +
-	// 	"<td>" + nextTrain + "</td>" +
-	// 	"<td>" + minsAway + minutes until arrival"</td>" +
-	// 	"</tr>");
- // },
-
 
 function(errorObject){
     console.log("Read failed: " + errorObject.code)
