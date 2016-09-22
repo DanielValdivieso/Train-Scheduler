@@ -23,16 +23,21 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
-/*h2 {
-    font-size: 18px;
-}*/
-
 h1, h3, .panel-title, .panel-body {
     color: aliceblue;
 }
 
 th, h2 {
     color: lightblue !important;
+}
+
+tr:hover {
+    background: #000 !important;
+}
+
+tr:hover td {
+    background: rgba(105, 105, 105, .8) !important;
+    color: paleturquoise !important;
 }
 
 td {
@@ -83,23 +88,13 @@ button{
     text-shadow: 2px 2px 4px #000000;
 }
 
-tr:hover {
-    background: #000 !important;
-}
-
-tr:hover td {
-    background: rgba(105, 105, 105, .8) !important;
-    color: paleturquoise !important;
+.panel-body, .panel-heading {
+    padding: 7px !important;
 }
 
 .milTime {
     font-size: 11px !important;
     line-height: 0px !important;
-}
-
-.panel-body, .panel-heading {
-    padding: 7px !important;
-
 }
 
 #freqDisplay, #nextDisplay {
