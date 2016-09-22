@@ -26,8 +26,7 @@ h1 {
     text-shadow: 2px 2px 4px #000000;
 }
 
-h1, h2 {
-    text-align: center !important;
+h2 {
     font-size: 18px;
 }
 
@@ -82,4 +81,14 @@ button{
     text-decoration-color: black !important;
     text-shadow: 2px 2px 4px #000000;
 }
+
+tr:hover {
+    background: #000 !important;
+}
+
+tr:hover td {
+    background: rgba(105, 105, 105, .8) !important;
+    color: paleturquoise !important;
+}
+
 

@@ -83,15 +83,23 @@ database.ref().on("child_added", function(childSnapshot){
  //TABLE DATA=====================================================
  //APPEND TO DISPLAY IN TRAIN TABLE
 $('#currentTime').text(currentTime);
-$('#trainTable').append("<tr>" +
-		"<td>" + childSnapshot.val().name + "</td>" +
-		"<td>" + childSnapshot.val().dest + "</td>" +
-		"<td>" + childSnapshot.val().freq + "</td>" +
-		//"<td>" + childSnapshot.val().time + "</td>" +
-		"<td>" + nextTrain + "</td>" +
-		"<td>" + minsAway + "</td>" +
-		"</tr>");
+$('#trainTable').append(
+		"<tr><td id='nameDisplay'>" + childSnapshot.val().name +
+		"</td><td id='destDisplay'>" + childSnapshot.val().dest +
+		"</td><td id='freqDisplay'>" + childSnapshot.val().freq +
+		"</td><td id='nextDisplay'>" + nextTrain +
+		"</td><td id='awayDisplay'>" + minsAway + "</td></tr>");
  },
+		
+
+
+	// 	"</td>" + childSnapshot.val().dest + "</td>" +
+	// 	"<td>" + childSnapshot.val().freq + "</td>" +
+	// 	//"<td>" + childSnapshot.val().time + "</td>" +
+	// 	"<td>" + nextTrain + "</td>" +
+	// 	"<td>" + minsAway + minutes until arrival"</td>" +
+	// 	"</tr>");
+ // },
 
 
 function(errorObject){
@@ -105,8 +113,5 @@ function(errorObject){
 //     $("#timeDisplay").html(snapshot.val().time);
 //     $("#freqDisplay").html(snapshot.val().freq);
 // })
-
-
-
 
 }); //END DOCUMENT.READY
